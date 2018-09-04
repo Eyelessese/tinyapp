@@ -6,13 +6,16 @@ tinyapp.js tell it to.
 */
 
 const express = require('express');
-const app = express();
+const path = require('./paths');
+const bodyParser = require("body-parser");
 
+const app = express();
+app.use(bodyParser.urlencoded({extended: true}));
 app.set('view engine', 'ejs');
 
 const port = 8080;
 
-const server = function()
+const createServer = function()
 {
   app.listen(port, () =>
   {
@@ -20,8 +23,17 @@ const server = function()
   });
 };
 
+const urlGet = function()
+{
+  app.get('/\w/g', (req, res) =>
+  {
+    console.log(req.path);
+    res.render(path.getPath(req.path));
+  });
+};
 
 module.exports =
 {
-server : server
+  start : createServer,
+  urlGet : urlGet
 };

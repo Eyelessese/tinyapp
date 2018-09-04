@@ -4,11 +4,6 @@
 central hub for internal program logic that every other module exports to for behaviour
 */
 
-const server = require('./tinyserver');
+const server = require('./tinyserver').server
 
-server.server();
-
-module.exports =
-{
-
-}
+server();

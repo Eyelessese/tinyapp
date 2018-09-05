@@ -1,0 +1,9 @@
+<ul>
+  <%for(key in urls){ %>
+    <li><%= key %><%= ' : ' %><%= urls[key] %><%= ' '%>
+    <form method="POST" action="/urls/<%= key %>/delete"><button>delete</button></form>
+    <form method="GET" action="/urls/<%= key %>/edit"><button>edit</button></form>
+    </li>
+  <% } %>
+</ul>
+    

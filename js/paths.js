@@ -16,7 +16,8 @@ let path =
 {
   "error" : "error.ejs",
   "/" : "home.ejs",
-  "/login" : "login.ejs"
+  "/login" : "login.ejs",
+  "/urls" : "urls_index.ejs"
 };
 
 const getPath = function(query)

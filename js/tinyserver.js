@@ -25,7 +25,7 @@ const createServer = function()
 
 const urlGet = function()
 {
-  app.get('/[^]*/', (req, res) =>
+  app.get(['/', '/[^]*/'], (req, res) =>
   {
     console.log(req.path);
     res.render(path.getPath(req.path));
